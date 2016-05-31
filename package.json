@@ -21,6 +21,7 @@
     "test": "mocha --compilers js:babel-core/register test/**/*.js",
     "example": "gulp build && open examples/index.html"
   },
+  "main": ".src/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/shibe97/react-awesome-modal.git"
