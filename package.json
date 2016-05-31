@@ -2,7 +2,7 @@
   "name": "react-awesome-modal",
   "version": "0.3.3",
   "description": "This is a React Modal Component.",
-  "main": "./lib/index",
+  "main": "./src/index.js",
   "keywords": [
     "react",
     "component",
