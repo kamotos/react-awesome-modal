@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import style from './style.js';
+import style as innerStyle from './style.js';
 
 export default class Modal extends Component {
     constructor(props) {
         super(props);
         let effect = props.effect || 'fadeInDown';
         this.setSize(effect);
+        
         this.state = {
             visible : props.visible,
-            style : style[effect]
+            style : Object.extend({}, innerStyle[effect], props.style || {})
         }
     }
 
@@ -27,12 +28,12 @@ export default class Modal extends Component {
 
     setSize(effect) {
         if(this.props && this.props.width) {
-            style[effect].panel.width = this.props.width + 'px';
-            style[effect].panel.marginLeft = '-' + this.props.width / 2 + 'px';
+            innerStyle[effect].panel.width = this.props.width + 'px';
+            innerStyle[effect].panel.marginLeft = '-' + this.props.width / 2 + 'px';
         }
         if(this.props && this.props.height) {
-            style[effect].panel.height = this.props.height + 'px';
-            style[effect].panel.marginTop = '-' + this.props.height / 2 + 'px';
+            innerStyle[effect].panel.height = this.props.height + 'px';
+            innerStyle[effect].panel.marginTop = '-' + this.props.height / 2 + 'px';
         }
     }
 
